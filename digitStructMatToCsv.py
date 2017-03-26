@@ -21,8 +21,8 @@ def convertToCsv(dsFilePath, csvFilePath):
  
 def main():
     if len(sys.argv) != 3:
-        print "Usage:"
-        print "    {0} <inputMatFilePath> <outputCsvFilePath>".format(sys.argv[0])
+        print("Usage:")
+        print("    {0} <inputMatFilePath> <outputCsvFilePath>".format(sys.argv[0]))
         return
     dsFilePath = sys.argv[1]
     csvFilePath = sys.argv[2]

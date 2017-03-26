@@ -27,19 +27,19 @@ def printHDFObj(theObj, theObjName):
     isGroup = isinstance(theObj, h5py.Group)
     isDataSet = isinstance(theObj, h5py.Dataset)
     isReference = isinstance(theObj, h5py.Reference)
-    print "{}".format(theObjName)
-    print "    type(): {}".format(type(theObj))
+    print("{}".format(theObjName))
+    print("    type(): {}".format(type(theObj)))
     if isFile or isGroup or isDataSet:
         # if theObj.name != None:
         #    print "    name: {}".format(theObj.name)
-        print "    id: {}".format(theObj.id)
+        print("    id: {}".format(theObj.id))
     if isFile or isGroup:
-        print "    keys: {}".format(theObj.keys())
+        print("    keys: {}".format(theObj.keys()))
     if not isReference:
-        print "    Len: {}".format(len(theObj))
+        print("    Len: {}".format(len(theObj)))
 
     if not (isFile or isGroup or isDataSet or isReference):
-        print theObj
+        print(theObj)
 
 def readDigitStructGroup(dsFile):
     dsGroup = dsFile["digitStruct"]
@@ -127,10 +127,10 @@ def testMain():
     testCounter = 0
     for dsObj in yieldNextDigitStruct(dsFileName):
         # testCounter += 1
-        print dsObj.name
+        print(dsObj.name)
         for bbox in dsObj.bboxList:
-            print "    {}:{},{},{},{}".format(
-                bbox.label, bbox.left, bbox.top, bbox.width, bbox.height)
+            print("    {}:{},{},{},{}".format(
+                bbox.label, bbox.left, bbox.top, bbox.width, bbox.height))
         if testCounter >= 5:
             break
 
